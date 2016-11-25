@@ -12,7 +12,7 @@ class FieldtypeEvents extends FieldtypeMulti {
 	public static function getModuleInfo() {
 		return array(
 			'title' => 'Events',
-			'version' => 3,
+			'version' => 4,
 			'summary' => 'Field that stores a table of events for a page.',
 			'installs' => 'InputfieldEvents', 
 			);
@@ -27,6 +27,15 @@ class FieldtypeEvents extends FieldtypeMulti {
 		$dir = dirname(__FILE__);
 		require_once("$dir/Event.php"); 
 		require_once("$dir/EventArray.php"); 
+		$this->config->scripts->add($this->config->urls->FieldtypeEvents."lib/jquery.datetimepicker.full.min.js");
+		$this->config->scripts->add($this->config->urls->FieldtypeEvents."lib/moment.min.js");
+		$this->config->scripts->add($this->config->urls->FieldtypeEvents."lib/moment-recur.min.js");
+		$this->config->scripts->add($this->config->urls->FieldtypeEvents."lib/jquery.popupoverlay.js");
+		$this->config->scripts->add($this->config->urls->FieldtypeEvents."lib/recurdates.js");
+
+		$this->config->styles->add($this->config->urls->FieldtypeEvents."lib/jquery.datetimepicker.min.css");
+		$this->config->styles->add($this->config->urls->FieldtypeEvents."lib/jquery.tools.overlay.css");
+		    
 	}
 
 	/**

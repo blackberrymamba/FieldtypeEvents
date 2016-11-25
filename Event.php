@@ -6,7 +6,7 @@
  */
 class Event extends WireData {
 
-	const dateFormat = 'Y-m-d'; 
+	const dateFormat = 'Y-m-d H:i'; 
 
 	/**
 	 * We keep a copy of the $page that owns this event so that we can follow

@@ -1,0 +1,66 @@
+<div id="recurDatesPopup" class="recurdates-overlay">
+	<label class="InputfieldHeader">Location: </label>
+	<div class="InputfieldContent"><input id='eventLocation' type='text' value='' style="width:100%"/></div>
+	
+	<label class="InputfieldHeader">Notes: </label>
+	<div class="InputfieldContent"><input id='eventNotes' type='text' value='' style="width:100%"/></div>
+	<div style="margin-top:1em;">
+	Every <input id='every' type='text' value='1' size='2' min='1' required/>
+    <select id='unit'>
+      <option value='d'>Day</option>
+      <option value='w'>Week</option>
+      <option value='m'>Month</option>
+    </select>
+    <span id='month_span' style='display:none'>
+      on
+      <select id='nth'>
+        <option value='0'>first</option>
+        <option value='1'>second</option>
+        <option value='2'>third</option>
+        <option value='3'>fourth</option>
+        <option value='4'>fifth</option>
+      </select>
+      <select id='occurrence_of'>
+        <option value="0">Sunday</option>
+        <option value="1">Monday</option>
+        <option value="2">Tuesday</option>
+        <option value="3">Wednesday</option>
+        <option value="4">Thursday</option>
+        <option value="5">Friday</option>
+        <option value="6">Saturday</option>
+       </select>
+      </select>
+    </span>
+	
+    <span id='week_span' style='display:none'>
+      on
+       <select id='week_days'>
+        <option value="0">Sunday</option>
+        <option value="1">Monday</option>
+        <option value="2">Tuesday</option>
+        <option value="3">Wednesday</option>
+        <option value="4">Thursday</option>
+        <option value="5">Friday</option>
+        <option value="6">Saturday</option>
+       </select>
+      </select>
+    </span>
+	</div>
+	<div style="margin-top:1em;">
+    from <span><input id='start' class="datepicker" type='text' required/></span>
+    <select id='end_condition'><option value="for">for</option><option value="until">until</option></select>
+    <span id='for_span'><input id='rfor' type='text' value='10' required/> occurences</span>
+    <span id='until_span' style='display:none'><input id='until' type='text' class="datepicker" value=''/></span>
+
+	</div>
+
+    <button id="generateOccurence">Generate</button>
+    <button id="clearOccurence">Clear</button>
+    <button id="insertOccurence">Insert</button>
+	<div id="recurOutput"></div>
+
+    <span class="recurDatesPopup_close close"> </span>
+
+</div>
+
+

@@ -10,7 +10,9 @@ find it useful for the example scenario (events) then great, but
 keep in mind it is not intended as a comprehensive events solution,
 where using ProcessWire pages may be a better fit. 
 
-<img src='https://github.com/ryancramerdesign/FieldtypeEvents/raw/master/screenshot.png' />
+<img src='https://github.com/blackberrymamba/FieldtypeEvents/raw/master/screenshot.png' />
+<img src='https://github.com/blackberrymamba/FieldtypeEvents/raw/master/screenshot-002.png' />
+<img src='https://github.com/blackberrymamba/FieldtypeEvents/raw/master/screenshot-003.png' />
 
 
 ## Install
@@ -65,4 +67,7 @@ $results = $pages->find("events.date<" . time());
 $results = $pages->find("events.date>=2014-01-01, events.date<2014-02-01"); 
 `````
 
+## blackberrymamba changes
 
+- Date picker for date field ([jQuery Datetimepicker](https://github.com/xdan/datetimepicker))
+- Recurring Events ([moment-recur](https://github.com/c-trimm/moment-recur))

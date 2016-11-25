@@ -36,7 +36,7 @@ class InputfieldEvents extends Inputfield {
 		$out = "
 			<tr class='Event$cnt $class'>
 				<td><a href='#' class='EventClone'><span class='ui-icon ui-icon-copy'></span></a></td>
-				<td><input type='text' name='{$name}_date[]' value='$date' class='datepicker' /></td>
+				<td><input type='text' name='{$name}_date[]' value='$date' class='datepicker' /><i class=\"fa fa-calendar eventsDatePicker\"></i></td>
 				<td><input type='text' name='{$name}_location[]' value='$location' /></td>
 				<td><input type='text' name='{$name}_notes[]' value='$notes' /></td>
 				<td>
@@ -63,25 +63,25 @@ class InputfieldEvents extends Inputfield {
 			$tbody .= $this->renderRow($event, $cnt); 
 		}	
 
-		$out = 	"
-		<table class='InputfieldEvents'>
+		$out = 	'
+		<table class="InputfieldEvents">
 			<thead>
-			<tr class=''>
-				<th class='EventClone'>&nbsp;</th>
-				<th class='EventDate'>Date</th>
-				<th class='EventLocation'>Location</th>
-				<th class='EventNotes'>Notes</th>
-				<th class='EventDel'>
-					<a title='Delete All' href='#' class='EventDel'><span class='ui-icon ui-icon-trash'></span></a>
+			<tr class="">
+				<th class="EventClone">&nbsp;</th>
+				<th class="EventDate">Date</th>
+				<th class="EventLocation">Location</th>
+				<th class="EventNotes">Notes</th>
+				<th class="EventDel">
+					<a title="Delete All" href="#" class="EventDel"><span class="ui-icon ui-icon-trash"></span></a>
 				</th>
 			</tr>
 			</thead>
-			<tbody>
-			$tbody
-			</tbody>
+			<tbody>'.$tbody.'</tbody>
 		</table>
-		";
-
+		';
+		$recurDatesHTML = file_get_contents(dirname(__FILE__)."/lib/recurdates.html");
+		$out .= $recurDatesHTML;
+		
 		// add a button that triggers adding a new event
 		$btn = $this->modules->get('InputfieldButton');
 		$btn->attr('id', $this->attr('name') . "_new"); 
@@ -89,7 +89,17 @@ class InputfieldEvents extends Inputfield {
 		$btn->icon = 'plus-sign';
 		$btn->value = $this->_('Add New Event'); 
 		$out .= $btn->render();
-
+		
+		$btn = $this->modules->get('InputfieldButton');
+		$btn->attr('id', "recurDatesPopup_open"); 
+		$btn->class .= " InputfieldEventsAddMore";
+		$btn->icon = 'plus-sign';
+		$btn->value = $this->_('Add Recurring Event'); 
+		$out .= $btn->render();
+		
+		
+		
+		
 		return $out; 
 	}
 
