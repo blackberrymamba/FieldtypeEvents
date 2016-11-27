@@ -32,9 +32,11 @@ class FieldtypeEvents extends FieldtypeMulti {
 		$this->config->scripts->add($this->config->urls->FieldtypeEvents."lib/moment-recur.min.js");
 		$this->config->scripts->add($this->config->urls->FieldtypeEvents."lib/jquery.popupoverlay.js");
 		$this->config->scripts->add($this->config->urls->FieldtypeEvents."lib/recurdates.js");
+		$this->config->scripts->add($this->config->urls->FieldtypeEvents."lib/jquery.dataTables.min.js");
 
 		$this->config->styles->add($this->config->urls->FieldtypeEvents."lib/jquery.datetimepicker.min.css");
 		$this->config->styles->add($this->config->urls->FieldtypeEvents."lib/jquery.tools.overlay.css");
+		$this->config->styles->add($this->config->urls->FieldtypeEvents."lib/jquery.dataTables.min.css");
 		    
 	}
 

@@ -71,3 +71,4 @@ $results = $pages->find("events.date>=2014-01-01, events.date<2014-02-01");
 
 - Date picker for date field ([jQuery Datetimepicker](https://github.com/xdan/datetimepicker))
 - Recurring Events ([moment-recur](https://github.com/c-trimm/moment-recur))
+- DataTables ([DataTables](https://datatables.net))
